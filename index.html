@@ -38,14 +38,10 @@
     <div class="navbar navbar-inverseX navbar-fixed-top"> <!-- Top nav bar -->
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="http://localhost/freetasks/" onclickx="return false;">HOME</a>
           <ul class="nav nav-pills">
-            <li><a href="http://twitter.github.com/bootstrap/components.html"       target="_blank">Bootstrap Manual</a></li>
-            <li><a href="http://www.w3resource.com/twitter-bootstrap/tutorial.php"  target="_blank">Bootstrap Tutorial</a></li>
-            <li><a href="http://pinesframework.org/pnotify/"                        target="_blank">Pine Notify</a></li>
           </ul>
           <ul class="nav pull-right nav-pills">
-            <li id="loginButton"></li>  
+            <li><a href="">Logout</a></li>  
           </ul>
           <p id="loginStatus" class="navbar-text pull-right"></p>       
         </div>
@@ -59,9 +55,9 @@
         <div class="span10">  <!-- Left column -->
             <div class="row-fluid">
 
-              <h5>Total case time: 12h</h5>
+              <h5>Total case time: 12h | Time left: 9h</h5>
               <div class="progress">
-                <div class="bar" style="width: 60%;"></div>
+                <div class="bar" style="width: 25%;"></div>
               </div>
 
             </div>
@@ -71,7 +67,7 @@
             <div class="row-fluid">
               <div class="wells well-small" style="text-align: center;">
                 <p class="text-center" style="text-align: center;">
-                  <strong>8:30 am</strong>
+                  <strong>9:37 am</strong>
                 </p>
                 <div class="btn-group" data-toggle="buttons-radio">
                   <button class="btn btn-mini btn-success" title="Start sim-time"><i class="icon-play icon-white"></i></button>
@@ -87,15 +83,140 @@
       <div class="row-fluid">
         <div class="navbar">
           <div class="navbar-inner">
-            <a class="brand" href="#">Title</a>
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              <li><a href="#"><i class="icon-info-sign"></i> Initial Info</a></li>
+              <li><a href="#"><i class="icon-plus-sign"></i> New Order</a></li>
+              <li><a href="#"><i class="icon-random"></i> Change Location</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="#"><i class="icon-question-sign"></i> Get Hint</a></li>
             </ul>
           </div>
         </div>
       </div>
+
+
+      <div class="row-fluid">
+        <div class="span7">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Order</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Start</th>
+                <th>Finish</th>
+                <!-- <th>Report</th> -->
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr class="">
+                <td>
+                  <input type="radio" name="select" id="sel1">
+                </td>
+                <td>Phisical exam</td>
+                <td>Test</td>
+                <td>Done</td>
+                <td>8:35 am</td>
+                <td>8:40 am</td>
+                <!-- <td><a href="">View report</a></td> -->
+              </tr>
+              <tr class="">
+                <td>
+                  <input type="radio" name="select" id="sel2">
+                </td>
+                <td>Move to hospital</td>
+                <td>Intervention</td>
+                <td>Done</td>
+                <td>8:45 am</td>
+                <td>9:15 am</td>
+                <!-- <td>-</td> -->
+              </tr>
+              <tr class="">
+                <td>
+                  <input type="radio" name="select" id="sel1">
+                </td>
+                <td>Phisical exam</td>
+                <td>Test</td>
+                <td>Done</td>
+                <td>9:20 am</td>
+                <td>9:35 am</td>
+                <!-- <td><a href="">View report</a></td> -->
+              </tr>              
+              <tr class="warning">
+                <td>
+                  <input type="radio" name="select" id="sel3">
+                </td>
+                <td>Urinalisys</td>
+                <td>Test</td>
+                <td>In Progress</td>
+                <td>9:30 am</td>
+                <td>9:45 am</td>
+                <!-- <td>Not ready</td> -->
+              </tr>
+              <tr class="warning">
+                <td>
+                  <input type="radio" name="select" id="sel4">
+                </td>
+                <td>Blood</td>
+                <td>Test</td>
+                <td>In Progress</td>
+                <td>9:30 am</td>
+                <td>10:45 am</td>
+                <!-- <td>Not ready</td> -->
+              </tr>
+              <tr class="success">
+                <td>
+                  <input type="radio" name="select" id="sel5" checked>
+                </td>
+                <td>Get Vital Signs</td>
+                <td>Test</td>
+                <td>Done</td>
+                <td>9:30 am</td>
+                <td>9:31 am</td>
+                <!-- <td>Not ready</td> -->
+              </tr>              
+            </tbody>
+          </table>
+        </div>
+
+        <div class="span5">
+          <div class="well well-small">
+
+            <h5>Order report</h5>
+              
+
+            <table class="table table-condensed">
+              <tbody>
+                <tr>
+                  <td>Body temperature</td>
+                  <td>37 C</td>
+                </tr>
+                <tr>
+                  <td>BP systolic</td>
+                  <td>140</td>
+                </tr>
+                <tr>
+                  <td>BP diastolic</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <td>Respiratory rate</td>
+                  <td>24</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+
 
     </div><!--/fluid-container-->
   
