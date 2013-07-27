@@ -1,0 +1,199 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mockups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Libraries -->
+      <link rel="stylesheet" href="jslib/bootstrap/css/bootstrap.css">
+      <link rel="stylesheet" href="jslib/bootstrap/css/bootstrap-responsive.css" >
+
+    <!-- SCRIPTS -->
+      <script type="text/javascript" language="javascript" src="jslib/jquery/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/bootstrap/js/bootstrap.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/pnotify/jquery.pnotify.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/moment.min.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/jquery.url.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/jquery.cookie.js"></script>
+
+  </head>
+
+
+  <body onload="onBodyLoad();">
+    <div class="navbar navbar-inverseX navbar-fixed-top"> <!-- Top nav bar -->
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Administrative Panel</a>
+          <ul class="nav nav-pills">
+          </ul>
+          <ul class="nav pull-right nav-pills">
+            <li><a href="index.html">Student</a></li>  
+            <li><a href="">Logout</a></li>  
+          </ul>
+          <p id="loginStatus" class="navbar-text pull-right"></p>       
+        </div>
+      </div>
+    </div> <!-- /Top nav bar -->
+
+
+    <div class="container-fluid"> <!--fluid-container-->
+
+      <div class="row-fluid">
+        <div class="span8 offset2">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>Case</th>
+                <th>Diagnosis</th>
+                <th>Time limit</th>
+
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr class="">
+                <td>Simulation Case #1</td>
+                <td>Heat stroke</td>
+                <td>20 m</td>
+                <td><a href="#openDsl" role="button" data-toggle="modal">View/Edit</a></td>
+                <td><a href="#">See results</a></td>
+              </tr>
+
+              <tr class="">
+                <td>Simulation Case #2</td>
+                <td>Alcohol intoxication</td>
+                <td>20 m</td>
+                <td>N/A</td>
+                <td>N/A</td>
+              </tr>
+
+              <tr class="">
+                <td>Simulation Case #3</td>
+                <td>Flu</td>
+                <td>30 m</td>
+                <td>N/A</td>
+                <td>N/A</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div><!--/fluid-container-->
+
+    <div id="openDsl" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Simulation Case #1</h3>
+      </div>
+
+      <div class="modal-body">
+        <h5>Case title (visible to student)</h5>
+        <input type="text" value="Simulation Case #1">
+
+        <h5>Case body</h5>
+        <center>
+<textarea class="field span7" id="textarea" rows="10" value="Simulation Case #1">
+  case {
+    name "Test Sim Case #1"
+
+    diagnosis "Heat stroke"
+    
+    sim-time "12h"
+    real-time "20m"
+    
+    description 
+      "An 18-year-old white man comes to the emergency department complaining of visual disturbances after spending the day playing beach volleyball. He complains of headache and dizziness, with some nausea, but no vomiting. He has become increasingly confused over the last two hours."
+
+    initial_vital_signs {
+    
+      temperature_c {
+        label "Body temperature, C"
+        current 37.0
+        norm_min 36.3
+        norm_max 36.9
+        critical_min 32
+        critical_max 41
+      }
+      
+      pulse {
+        label "Pulse, r/min"
+        current 130
+        norm_min 60
+        norm_max 100
+        critical_min 30
+        critical_max 200
+      }
+
+      respiratory_rate {
+        label "Respiratory rate, r/min"
+        current 34
+        norm_min 12
+        norm_max 20
+        critical_min 5
+        critical_max 40
+      }
+
+      bp_systolic {
+        label "BP systolic, mmHg"
+        current 160
+        norm_min 95
+        norm_max 140
+        critical_min 60
+        critical_max 180
+      }
+
+      bp_diastolic {
+        label "BP diastolic, mmHg"
+        current 110
+        norm_min 60
+        norm_max 90
+        critical_min 40
+        critical_max 110
+      }
+
+      height {
+        label "Height, cm"
+        current 183
+      }
+
+      weight {
+        label "Weight, kg"
+        current 97.5
+      }
+
+      bmi {
+        label "Body mass index, kg/m^2"
+        current 27.7
+      }
+
+    }          
+</textarea>
+        </center>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button class="btn btn-primary">Confirm diagnosis</button>
+      </div>
+    </div>
+
+  </body>
+</html>

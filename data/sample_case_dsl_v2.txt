@@ -1,0 +1,273 @@
+case {
+  name "Test Sim Case #1"
+
+  diagnosis "Heat stroke"
+  
+  sim-time "12h"
+  real-time "20m"
+  
+  description 
+    "An 18-year-old white man comes to the emergency department complaining of visual disturbances after spending the day playing beach volleyball. He complains of headache and dizziness, with some nausea, but no vomiting. He has become increasingly confused over the last two hours."
+
+  initial_vital_signs {
+  
+    temperature_c {
+      label "Body temperature, C"
+      current 37.0
+      norm_min 36.3
+      norm_max 36.9
+      critical_min 32
+      critical_max 41
+    }
+    
+    pulse {
+      label "Pulse, r/min"
+      current 130
+      norm_min 60
+      norm_max 100
+      critical_min 30
+      critical_max 200
+    }
+
+    respiratory_rate {
+      label "Respiratory rate, r/min"
+      current 34
+      norm_min 12
+      norm_max 20
+      critical_min 5
+      critical_max 40
+    }
+
+    bp_systolic {
+      label "BP systolic, mmHg"
+      current 160
+      norm_min 95
+      norm_max 140
+      critical_min 60
+      critical_max 180
+    }
+
+    bp_diastolic {
+      label "BP diastolic, mmHg"
+      current 110
+      norm_min 60
+      norm_max 90
+      critical_min 40
+      critical_max 110
+    }
+
+    height {
+      label "Height, cm"
+      current 183
+    }
+
+    weight {
+      label "Weight, kg"
+      current 97.5
+    }
+
+    bmi {
+      label "Body mass index, kg/m^2"
+      current 27.7
+    }
+
+  }
+  
+  location "Hospital"
+  location "Home"
+  current_location "Home"
+
+  symptom {
+    name "Dry skin"
+  }
+
+  symptom {
+    name "Head ache"
+  }
+
+  symptom {
+    name "Dizziness"
+  }
+
+  symptom {
+    name "Nausea"
+  }
+
+  
+  effect {
+    name "Temperature rise"
+    duration "1h"
+    active "yes"
+    repeat "yes"
+    
+    action {
+      temperature_c +1
+    }
+  }  
+
+  effect {
+    name "Temperature drop"
+    duration "1h"
+    repeat "yes"
+    
+    action {
+      temperature_c -1
+    }
+
+  }    
+  
+  effect {
+    name "BP rise"
+    duration "15m"
+    repeat "yes"
+    action {
+      bp_systolic_current +3
+      bp_diastolic_current +2
+    }
+    prevent {
+    }  
+  }   
+
+  effect {
+    name "BP drop"
+    duration "15m"
+    repeat "yes"
+    action {
+      bp_systolic_current -3
+      bp_diastolic_current -2
+    }
+    prevent {
+    }  
+  }   
+
+
+  hint {
+    name "Hospitalize patient."
+    available_at_location "Home"
+    message "Hospitalize patient"
+  }
+
+  hint {
+    name "Airway and ventilation"
+    available_at_location "Emergency Department"
+    if respiratory_rate > 20 {
+      message "Maintain airway and ventilation"
+    }
+  }
+
+  hint {
+    name "Reduce body temperature"
+    available_at_location "Emergency Department"
+    if temperature_c > 37.0 {
+      message "Reduce body temperature"
+    }
+  }
+
+  
+
+  test {
+    name "Get vitals"
+    duration "0m"
+
+    result "General Appearance: He is mildly confused, His skin is hot, flushed, and appears very dry."
+    result "Cardiovascular: Examination shows tachycardia with no murmurs or gallops."
+    result "Neuro/Psych: Patient is mildly disoriented and confused."
+  }
+
+  test {
+    name "Physical exam"
+    duration "10m"
+
+    result "General Appearance: He is mildly confused, His skin is hot, flushed, and appears very dry."
+    result "Cardiovascular: Examination shows tachycardia with no murmurs or gallops."
+    result "Neuro/Psych: Patient is mildly disoriented and confused."
+  }
+
+  test {
+    name "Complete blood count"
+    duration "30m"
+
+    result "Hematocrit 48%"
+  }
+
+  test {
+    name "Serum electrolytes"
+    duration "20m"
+
+    result "Potassium 6.2 mEq/L (normal: 3.5?5.2 mEq/L)"
+  }
+
+  test {
+    name "Chest x-ray"
+    duration "15m"
+
+    result "Normal"
+  }
+
+  test {
+    name "Urinalysis"
+    duration "120m"
+
+    result "Tubular casts; protein and myoglobin"
+  }
+
+  test {
+    name "Arterial blood gasses"
+    duration 15m
+
+    result "pH 7.48; CO2 28 mm Hg; O2 100 mm Hg; saturation 99% room air"
+  }
+
+  
+  
+  intervention {
+    name "Cooling blanket"
+    available_at_location "Emergency department"
+    duration "15m"
+    mandatory "yes"
+    deadline "2h"
+    actions {
+      temperature_c -2.5
+    } 
+  }
+  
+  intervention {
+    name "Move to hospital"
+    duration "30m"
+    mandatory "yes"
+    deadline "1h"
+    actions {
+      location "Hospital"
+      effect["Temperature rise"].active "no"
+    } 
+  }  
+  
+  intervention {
+    name "Nebulized saline sprays"
+    duration "5m"
+    mandatory "yes"
+    deadline "30m"
+    action {
+      temperature_c -2
+    } 
+  }
+  
+  intervention {
+    name "Intravenous fluids, isotonic electrolyte solution"
+    duration "10m"
+    mandatory "no"
+    action {
+      description "Reduce damage to the kidney from myoglobin"
+    } 
+  }
+
+  intervention {
+    name "Ice water immersion"
+    mandatory "no"
+    action {
+      temperature_c -2c
+    } 
+  }  
+
+  
+}

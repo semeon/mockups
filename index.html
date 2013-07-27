@@ -38,9 +38,11 @@
     <div class="navbar navbar-inverseX navbar-fixed-top"> <!-- Top nav bar -->
       <div class="navbar-inner">
         <div class="container-fluid">
+          <a class="brand" href="#">Simulation Case #1</a>
           <ul class="nav nav-pills">
           </ul>
           <ul class="nav pull-right nav-pills">
+            <li><a href="admin.html">Admin</a></li>  
             <li><a href="">Logout</a></li>  
           </ul>
           <p id="loginStatus" class="navbar-text pull-right"></p>       
@@ -55,7 +57,7 @@
         <div class="span10">  <!-- Left column -->
             <div class="row-fluid">
 
-              <h5>Total case time: 12h | Time left: 9h</h5>
+              <p><i class="icon-time"></i> Total case time: 12h | Time left: 9h</p>
               <div class="progress">
                 <div class="bar" style="width: 25%;"></div>
               </div>
@@ -65,14 +67,14 @@
 
         <div class="span2">  <!-- Left column -->
             <div class="row-fluid">
-              <div class="wells well-small" style="text-align: center;">
+              <div class="well well-small" style="text-align: center;">
                 <p class="text-center" style="text-align: center;">
-                  <strong>9:37 am</strong>
+                  <strong>9:42 am</strong>
                 </p>
                 <div class="btn-group" data-toggle="buttons-radio">
                   <button class="btn btn-mini btn-success" title="Start sim-time"><i class="icon-play icon-white"></i></button>
-                  <button class="btn btn-mini btn-success" title="Pause sim-time"><i class="icon-pause icon-white"></i></button>
-                  <button class="btn btn-mini btn-success" title="Next event"><i class="icon-step-forward icon-white"></i></button>
+                  <button class="btn btn-mini btn-success active" title="Pause sim-time"><i class="icon-pause icon-white"></i></button>
+                  <button class="btn btn-mini btn-success" title="Move to next event"><i class="icon-step-forward icon-white"></i></button>
                 </div>
               </div>
             </div>
@@ -84,141 +86,327 @@
         <div class="navbar">
           <div class="navbar-inner">
             <ul class="nav">
-              <li><a href="#"><i class="icon-info-sign"></i> Initial Info</a></li>
-              <li><a href="#"><i class="icon-plus-sign"></i> New Order</a></li>
-              <li><a href="#"><i class="icon-random"></i> Change Location</a></li>
+              <li><a href="#initialInfo" role="button" data-toggle="modal"><i class="icon-info-sign"></i> Initial History</a></li>
+              <li><a href="#newOrder" role="button" data-toggle="modal"><i class="icon-edit"></i> New Order</a></a></li>
+
+              <li><a href="#changeLocation" role="button" data-toggle="modal"><i class="icon-map-marker"></i> Change Location</a></li>
+              <li><a href="#provideDiagnosis" role="button" data-toggle="modal"><i class="icon-ok-sign"></i> Provide diagnosis</a></li>
             </ul>
             <ul class="nav pull-right">
-              <li><a href="#"><i class="icon-question-sign"></i> Get Hint</a></li>
+              <li><a href="#getHint" role="button" data-toggle="modal"><i class="icon-question-sign"></i> Get Hint</a></li>
             </ul>
           </div>
         </div>
+
+<!--
+        <div class="navbar">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li><a href="#initialInfo" role="button" data-toggle="modal"><i class="icon-info-sign"></i> Initial History</a></li>
+              <li><a href="#newOrder" role="button" data-toggle="modal"><i class="icon-plus-sign"></i> New Order</a></a></li>
+
+              <li><a href="#changeLocation" role="button" data-toggle="modal"><i class="icon-map-marker"></i> Change Location</a></li>
+              <li><a href="#provideDiagnosis" role="button" data-toggle="modal"><i class="icon-ok-sign"></i> Provide diagnosis</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="#getHint" role="button" data-toggle="modal"><i class="icon-question-sign"></i> Get Hint</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li><a href="#initialInfo" role="button" data-toggle="modal"><i class="icon-info-sign"></i> Initial History</a></li>
+              <li><a href="#newOrder" role="button" data-toggle="modal"><i class="icon-edit"></i> New Order</a></a></li>
+
+              <li><a href="#changeLocation" role="button" data-toggle="modal"><i class="icon-map-marker"></i> Change Location</a></li>
+              <li><a href="#provideDiagnosis" role="button" data-toggle="modal"><i class="icon-ok"></i> Provide diagnosis</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <li><a href="#getHint" role="button" data-toggle="modal"><i class="icon-question-sign"></i> Get Hint</a></li>
+            </ul>
+          </div>
+        </div>
+-->
+
       </div>
 
 
       <div class="row-fluid">
-        <div class="span7">
+        <div class="span8">
           <table class="table table-condensed table-hover">
             <thead>
               <tr>
-                <th></th>
                 <th>Order</th>
                 <th>Type</th>
                 <th>Status</th>
                 <th>Start</th>
                 <th>Finish</th>
-                <!-- <th>Report</th> -->
+                <th>Report</th>
               </tr>
             </thead>
     
             <tbody>
               <tr class="">
-                <td>
-                  <input type="radio" name="select" id="sel1">
-                </td>
                 <td>Phisical exam</td>
                 <td>Test</td>
                 <td>Done</td>
                 <td>8:35 am</td>
                 <td>8:40 am</td>
-                <!-- <td><a href="">View report</a></td> -->
+                <td><a href="#">Show report &raquo;</a></td>
               </tr>
               <tr class="">
-                <td>
-                  <input type="radio" name="select" id="sel2">
-                </td>
                 <td>Move to hospital</td>
                 <td>Intervention</td>
                 <td>Done</td>
                 <td>8:45 am</td>
                 <td>9:15 am</td>
-                <!-- <td>-</td> -->
+                <td>-</td>
               </tr>
               <tr class="">
-                <td>
-                  <input type="radio" name="select" id="sel1">
-                </td>
-                <td>Phisical exam</td>
+                <td>Get</td>
                 <td>Test</td>
                 <td>Done</td>
                 <td>9:20 am</td>
                 <td>9:35 am</td>
-                <!-- <td><a href="">View report</a></td> -->
-              </tr>              
+                <td><a href="#">Show report &raquo;</a></td>
+              </tr>
+              <tr class="">
+                <td>Get Vital Signs</td>
+                <td>Test</td>
+                <td>Done</td>
+                <td>9:20 am</td>
+                <td>9:21 am</td>
+                <td><a href="#">Show report &raquo;</a></td>
+              </tr>                            
+              <tr class="">
+                <td>Chest x-ray</td>
+                <td>Test</td>
+                <td>Done</td>
+                <td>9:25 am</td>
+                <td>9:40 am</td>
+                <td><a href="#">Show report &raquo;</a></td>
+              </tr> 
               <tr class="warning">
-                <td>
-                  <input type="radio" name="select" id="sel3">
-                </td>
                 <td>Urinalisys</td>
                 <td>Test</td>
                 <td>In Progress</td>
                 <td>9:30 am</td>
-                <td>9:45 am</td>
-                <!-- <td>Not ready</td> -->
+                <td>10:00 am</td>
+                <td>Not ready</td>
               </tr>
               <tr class="warning">
-                <td>
-                  <input type="radio" name="select" id="sel4">
-                </td>
-                <td>Blood</td>
+                <td>Complete blood count</td>
                 <td>Test</td>
                 <td>In Progress</td>
                 <td>9:30 am</td>
                 <td>10:45 am</td>
-                <!-- <td>Not ready</td> -->
+                <td>Not ready</td>
               </tr>
               <tr class="success">
-                <td>
-                  <input type="radio" name="select" id="sel5" checked>
-                </td>
                 <td>Get Vital Signs</td>
                 <td>Test</td>
                 <td>Done</td>
                 <td>9:30 am</td>
                 <td>9:31 am</td>
-                <!-- <td>Not ready</td> -->
+                <td><a href="#">Displayed &raquo;</a></td>
               </tr>              
             </tbody>
           </table>
         </div>
 
-        <div class="span5">
-          <div class="well well-small">
+        <div class="span4">
+          <div class="well well-small" id="report_1">
 
-            <h5>Order report</h5>
-              
-
+            <h5>Test report: Get Vital Signs</h5>
             <table class="table table-condensed">
               <tbody>
                 <tr>
-                  <td>Body temperature</td>
-                  <td>37 C</td>
+                  <td>Body temperature, C</td>
+                  <td>37.0</td>
                 </tr>
                 <tr>
-                  <td>BP systolic</td>
-                  <td>140</td>
+                  <td>Pulse, r/min</td>
+                  <td>130</td>
                 </tr>
                 <tr>
-                  <td>BP diastolic</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <td>Respiratory rate</td>
+                  <td>Respiratory rate, r/min</td>
                   <td>24</td>
+                </tr>
+                <tr>
+                  <td>BP systolic, mmHg</td>
+                  <td>160</td>
+                </tr>
+                <tr>
+                  <td>BP diastolic, mmHg</td>
+                  <td>110</td>
                 </tr>
               </tbody>
             </table>
-
-
           </div>
+
         </div>
-
-
       </div>
 
-
-
     </div><!--/fluid-container-->
+
+    <div id="newOrder" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">New order</h3>
+      </div>
+
+      <div class="modal-body">
+        <h5>Choose order</h5>
+        <select class="span5">
+          <option>Test: Complete blood count</option>
+          <option>Test: Get vitals</option>
+          <option>Test: Phisical exam</option>
+          <option>Test: Serum electrolytes</option>
+          <option>Test: Urinalysis</option>
+          <option>Intervention: Move to hostpital</option>
+          <option>Intervention: Cooling blanket</option>
+          <option>Intervention: Nebulized saline sprays</option>
+          <option>Intervention: Intravenous fluids, isotonic electrolyte solution</option>
+          <option>Intervention: Ice water immersion</option>
+        </select>        
+
+        <h5>Order description</h5>
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td>Title</td>
+                <td>Complete blood count</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>Test</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>15m</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel order</button>
+        <button class="btn btn-primary">Confirm order</button>
+      </div>
+    </div>
   
+    <div id="changeLocation" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Change patient location</h3>
+      </div>
+
+      <div class="modal-body">
+        <h5>Choose order</h5>
+        <select class="span5">
+          <option>Intervention: Move to hostpital</option>
+          <option>Test: Complete blood count</option>
+          <option>Test: Get vitals</option>
+          <option>Test: Phisical exam</option>
+          <option>Test: Serum electrolytes</option>
+          <option>Test: Urinalysis</option>
+          <option>Intervention: Cooling blanket</option>
+          <option>Intervention: Nebulized saline sprays</option>
+          <option>Intervention: Intravenous fluids, isotonic electrolyte solution</option>
+          <option>Intervention: Ice water immersion</option>
+        </select>        
+
+        <h5>Order description</h5>
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td>Title</td>
+                <td>Move to hostpital</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>Intervention</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>30m</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel order</button>
+        <button class="btn btn-primary">Confirm order</button>
+      </div>
+    </div>
+
+    <div id="initialInfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Initial Information</h3>
+      </div>
+
+      <div class="modal-body">
+        <h5>Initial history</h5>
+        <p>An 18-year-old white man comes to the emergency department complaining of visual disturbances after spending the day playing beach volleyball. He complains of headache and dizziness, with some nausea, but no vomiting. He has become increasingly confused over the last two hours.</p>       
+
+        <h5>Symptoms</h5>
+        <ul>
+          <li>Dry skin</li>
+          <li>Head ache</li>
+          <li>Dizziness</li>
+          <li>Nausea</li>
+        </ul>
+
+        <h5>Assignment</h5>
+        <ul>
+          <li>Provide correct diagnosis</li>
+          <li>Perform all necessary interventons</li>
+          <li>Keep the vital sign in normal range</li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+    <div id="getHint" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Hint</h3>
+      </div>
+
+      <div class="modal-body">
+        <p><i class="icon-exclamation-sign"></i> Hospitalize patient.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+    <div id="provideDiagnosis" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+        stylez="width: 700px; margin-left: -350px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Provide you diagnosis</h3>
+      </div>
+
+      <div class="modal-body">
+        <center>
+          <textarea class="field span7" id="textarea" rows="10" placeholder="Enter you diagnosis here"></textarea>
+        </center>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button class="btn btn-primary">Confirm diagnosis</button>
+      </div>
+    </div>
+
   </body>
 </html>
