@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mockups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Libraries -->
+      <link rel="stylesheet" href="jslib/bootstrap/css/bootstrap.css">
+      <link rel="stylesheet" href="jslib/bootstrap/css/bootstrap-responsive.css" >
+
+    <!-- SCRIPTS -->
+      <script type="text/javascript" language="javascript" src="jslib/jquery/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/bootstrap/js/bootstrap.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/pnotify/jquery.pnotify.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/moment.min.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/jquery.url.js"></script>
+      <script type="text/javascript" language="javascript" src="jslib/jquery.cookie.js"></script>
+
+  </head>
+
+
+  <body onload="onBodyLoad();">
+    <div class="navbar navbar-inverseX navbar-fixed-top"> <!-- Top nav bar -->
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="http://localhost/freetasks/" onclickx="return false;">HOME</a>
+          <ul class="nav nav-pills">
+            <li><a href="http://twitter.github.com/bootstrap/components.html"       target="_blank">Bootstrap Manual</a></li>
+            <li><a href="http://www.w3resource.com/twitter-bootstrap/tutorial.php"  target="_blank">Bootstrap Tutorial</a></li>
+            <li><a href="http://pinesframework.org/pnotify/"                        target="_blank">Pine Notify</a></li>
+          </ul>
+          <ul class="nav pull-right nav-pills">
+            <li id="loginButton"></li>  
+          </ul>
+          <p id="loginStatus" class="navbar-text pull-right"></p>       
+        </div>
+      </div>
+    </div> <!-- /Top nav bar -->
+
+
+    <div class="container-fluid"> <!--fluid-container-->
+
+      <div class="row-fluid">
+        <div class="span10">  <!-- Left column -->
+            <div class="row-fluid">
+
+              <h5>Total case time: 12h</h5>
+              <div class="progress">
+                <div class="bar" style="width: 60%;"></div>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="span2">  <!-- Left column -->
+            <div class="row-fluid">
+              <div class="wells well-small" style="text-align: center;">
+                <p class="text-center" style="text-align: center;">
+                  <strong>8:30 am</strong>
+                </p>
+                <div class="btn-group" data-toggle="buttons-radio">
+                  <button class="btn btn-mini btn-success" title="Start sim-time"><i class="icon-play icon-white"></i></button>
+                  <button class="btn btn-mini btn-success" title="Pause sim-time"><i class="icon-pause icon-white"></i></button>
+                  <button class="btn btn-mini btn-success" title="Next event"><i class="icon-step-forward icon-white"></i></button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div><!--/row-->
+
+
+      <div class="row-fluid">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="#">Title</a>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!--/fluid-container-->
+  
+  </body>
+</html>
