@@ -3,7 +3,8 @@ case {
 
   diagnosis "Heat stroke"
   
-  sim-time "12h"
+  sim-start-time "8:00am"
+  sim-duration "12h"
   real-time "20m"
   
   initial_history 
