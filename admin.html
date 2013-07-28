@@ -38,12 +38,14 @@
     <div class="navbar navbar-inverseX navbar-fixed-top"> <!-- Top nav bar -->
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="#">Administrative Panel</a>
+          <!-- <a class="brand" href="#">Admin Panel</a> -->
           <ul class="nav nav-pills">
+            <li class="active"><a href="admin.html">Admin interface</a></li>  
+            <li><a href="index.html">Student interface</a></li>  
           </ul>
           <ul class="nav pull-right nav-pills">
-            <li><a href="index.html">Student</a></li>  
-            <li><a href="">Logout</a></li>  
+            <!-- <li><a href="index.html">Switch to Student</a></li> -->  
+            <!-- <li><a href="">Logout</a></li> -->  
           </ul>
           <p id="loginStatus" class="navbar-text pull-right"></p>       
         </div>
@@ -388,7 +390,7 @@ case {
 
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button class="btn btn-primary">Confirm diagnosis</button>
+        <button class="btn btn-primary">Save changes</button>
       </div>
     </div>
 
