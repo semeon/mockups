@@ -6,7 +6,7 @@ case {
   sim-time "12h"
   real-time "20m"
   
-  description 
+  initial_history 
     "An 18-year-old white man comes to the emergency department complaining of visual disturbances after spending the day playing beach volleyball. He complains of headache and dizziness, with some nausea, but no vomiting. He has become increasingly confused over the last two hours."
 
   initial_vital_signs {
@@ -97,8 +97,8 @@ case {
   effect {
     name "Temperature rise"
     duration "1h"
-    active "yes"
     repeat "yes"
+    active "yes"
     
     action {
       temperature_c +1
@@ -109,17 +109,19 @@ case {
     name "Temperature drop"
     duration "1h"
     repeat "yes"
-    
+    active "no"
+
     action {
       temperature_c -1
     }
-
   }    
   
   effect {
     name "BP rise"
     duration "15m"
     repeat "yes"
+    active "no"
+
     action {
       bp_systolic_current +3
       bp_diastolic_current +2
@@ -132,6 +134,8 @@ case {
     name "BP drop"
     duration "15m"
     repeat "yes"
+    active "no"
+
     action {
       bp_systolic_current -3
       bp_diastolic_current -2
@@ -221,6 +225,17 @@ case {
   
   
   intervention {
+    name "Move to hospital"
+    duration "30m"
+    mandatory "yes"
+    deadline "1h"
+    actions {
+      location "Hospital"
+      effect["Temperature rise"].active "no"
+    } 
+  }
+
+  intervention {
     name "Cooling blanket"
     available_at_location "Emergency department"
     duration "15m"
@@ -230,17 +245,6 @@ case {
       temperature_c -2.5
     } 
   }
-  
-  intervention {
-    name "Move to hospital"
-    duration "30m"
-    mandatory "yes"
-    deadline "1h"
-    actions {
-      location "Hospital"
-      effect["Temperature rise"].active "no"
-    } 
-  }  
   
   intervention {
     name "Nebulized saline sprays"
